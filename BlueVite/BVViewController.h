@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BVViewController : UIViewController
+@interface BVViewController : UIViewController <CBPeripheralManagerDelegate, CLLocationManagerDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *messageTextField;				// populate when beacon event is detected
+@property (weak, nonatomic) IBOutlet UIButton *startStopAdvertisingButton;
+
+@property (strong) NSDictionary*		beaconPeripheralData;
+@property (strong) CBPeripheralManager*	peripheralManager;
+@property (strong) CLLocationManager*	locationManager;
+@property (strong) CLBeaconRegion*		beaconRegion;
 
 @end
